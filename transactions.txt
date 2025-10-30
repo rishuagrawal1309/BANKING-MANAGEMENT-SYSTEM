@@ -1,0 +1,4 @@
+Account 1002: Deposit ₹1000.00
+Account 1002: Withdraw ₹10.00
+Account 1002: Deposit ₹15000.00
+Account 1001: Deposit ₹3000.00
