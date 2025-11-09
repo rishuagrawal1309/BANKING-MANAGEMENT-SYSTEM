@@ -1,2 +1,4 @@
-9383 1003 100000.00 car Rejected
-9383 1002 200000.00 home Rejected
+9383 1003 100000.00 car Processed
+9383 1002 200000.00 home Processed
+9383 1001 10000.00 home Processed
+886 1004 20000.00 home Approved

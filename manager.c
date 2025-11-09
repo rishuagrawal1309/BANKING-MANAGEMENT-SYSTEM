@@ -3,54 +3,78 @@
 #include "manager.h"
 #include "loan.h"
 #include "feedback.h"
+#define RESET   "\033[0m"
+#define RED     "\033[1;31m"
+#define GREEN   "\033[1;32m"
+#define YELLOW  "\033[1;33m"
+#define BLUE    "\033[1;34m"
+#define CYAN    "\033[1;36m"
+#define MAGENTA "\033[1;35m"
+#define WHITE   "\033[1;37m"
+#define CLEAR   "\033[2J\033[1;1H"
 
+
+void loan_approval_ui();
 void manager_menu(int connFD) {
     int choice;
-    do {
-        printf("\n--- MANAGER MENU ---\n");
-        printf("1. Approve Loan\n");
-        printf("2. View Reports\n");
-        printf("3. Logout\n");
-        printf("4. View All Loans\n");
-        printf("5. Approve/Reject Loan\n");
-        printf("6. View Feedback\n");
-        printf("7. Reply to Feedback\n");
 
-        printf("Enter choice: ");
+    do {
+        printf(CLEAR);
+        printf(CYAN "===============================================\n" RESET);
+        printf(YELLOW "                 MANAGER PORTAL                \n" RESET);
+        printf(CYAN "===============================================\n" RESET);
+        printf(GREEN "[1]" RESET " View All Loans\n");
+        printf(GREEN "[2]" RESET " Loan Approval Panel\n");
+        printf(GREEN "[3]" RESET " View Feedback\n");
+        printf(GREEN "[4]" RESET " Reply to Feedback\n");
+        printf(GREEN "[5]" RESET " Logout\n");
+        printf(CYAN "-----------------------------------------------\n" RESET);
+        printf(BLUE "Enter your choice: " RESET);
         scanf("%d", &choice);
 
         switch (choice) {
-            case 1: printf("Loan approved.\n"); break;
-            case 2: printf("Report viewed.\n"); break;
-            case 3: printf("Manager logged out.\n"); break;
-            case 4:
-               list_loans();
+
+            case 1:
+                printf(CLEAR);
+                printf(YELLOW "📌 ALL LOANS:\n\n" RESET);
+                list_loans();
+                printf("\n" CYAN "Press Enter to continue..." RESET);
+                getchar(); getchar();
                 break;
-           case 5: 
-    int id, ch;
-    printf("Enter Loan ID: ");
-    scanf("%d", &id);
-    printf("1. Approve  2. Reject: ");
-    scanf("%d", &ch);
-    if (ch == 1) update_loan_status(id, "Approved");
-    else update_loan_status(id, "Rejected");
-    break;
 
-          case 6:
-    list_feedbacks();
-    break;
+            case 2:
+                loan_approval_ui();
+                break;
 
-case 7: 
-    int id1;
-    char reply[100];
-    printf("Enter Feedback ID to reply: ");
-    scanf("%d", &id1);
-    printf("Enter reply (one word): ");
-    scanf("%s", reply);
-    add_reply(id1, reply);
-    break;
+            case 3:
+                printf(CLEAR);
+                printf(YELLOW "📌 FEEDBACK LIST:\n\n" RESET);
+                list_feedbacks();
+                printf("\n" CYAN "Press Enter to continue..." RESET);
+                getchar(); getchar();
+                break;
 
-            default: printf("Invalid choice.\n");
+            case 4: {
+                int id;
+                char reply[100];
+                printf("\nEnter Feedback ID: ");
+                scanf("%d", &id);
+                printf("Enter reply: ");
+                scanf("%s", reply);
+                add_reply(id, reply);
+                printf(GREEN "✔ Reply saved!\n" RESET);
+                sleep(1);
+                break;
+            }
+
+            case 5:
+                printf(YELLOW "⚠ Logging out...\n" RESET);
+                sleep(1);
+                return;
+
+            default:
+                printf(RED "✖ Invalid choice. Try again.\n" RESET);
+                sleep(1);
         }
-    } while (choice != 3);
+    } while(choice != 5);
 }

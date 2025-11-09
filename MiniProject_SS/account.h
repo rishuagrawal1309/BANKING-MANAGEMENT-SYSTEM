@@ -19,5 +19,5 @@ typedef struct {
 Account read_account(int id);
 void write_account(Account acc);
 void log_transaction(int id, const char *type, double amount);
-int get_next_account_id();
+
 #endif

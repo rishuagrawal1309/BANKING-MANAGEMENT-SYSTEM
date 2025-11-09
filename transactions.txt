@@ -2,3 +2,20 @@ Account 1002: Deposit ₹1000.00
 Account 1002: Withdraw ₹10.00
 Account 1002: Deposit ₹15000.00
 Account 1001: Deposit ₹3000.00
+Account 1001: Deposit ₹5000.00
+Account 1001: Withdraw ₹1000.00
+Account 1002: Deposit ₹10000.00
+Account 1004: Deposit ₹15000.00
+Account 1004: Withdraw ₹700.00
+Account 1001: Deposit ₹10000.00
+Account 1002: Transfer Out ₹0.00
+Account 0: Transfer In ₹0.00
+Account 1001: Transfer Out ₹0.00
+Account 0: Transfer In ₹0.00
+Account 1001: Transfer Out ₹0.00
+Account 0: Transfer In ₹0.00
+Account 1001: Transfer Out ₹0.00
+Account 0: Transfer In ₹0.00
+Account 1003: Deposit ₹5000.00
+Account 1001: Transfer Out ₹300.00
+Account 1002: Transfer In ₹300.00

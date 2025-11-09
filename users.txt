@@ -3,3 +3,10 @@
 3 employee employee 3
 4 customer customer 4
 
+9383 1002 1002 4
+2777 1004 shruti 4
+9383 1005 aryan 4
+9383 101 rish 4
+9383 1003 rishu234 4
+9383 1003 rish345 4
+9383 1005 shruti 4

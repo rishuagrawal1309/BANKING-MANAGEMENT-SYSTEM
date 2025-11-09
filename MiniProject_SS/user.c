@@ -2,14 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include "user.h"
-#define RESET   "\033[0m"
-#define RED     "\033[1;31m"
-#define GREEN   "\033[1;32m"
-#define YELLOW  "\033[1;33m"
-#define BLUE    "\033[1;34m"
-#define CYAN    "\033[1;36m"
-#define WHITE   "\033[1;37m"
-#define MAGENTA "\033[1;35m"
 
 #define USERS_FILE "users.txt"
 
@@ -75,16 +67,10 @@ int login(User *u) {
     }
 
     char username[50], password[50];
-    printf(CYAN "\n=========================================\n" RESET);
-printf(YELLOW "          BANKING MANAGEMENT SYSTEM       \n" RESET);
-printf(CYAN "=========================================\n\n" RESET);
-
-printf(BLUE "Login Username: " RESET);
-scanf("%s", username);
-
-printf(BLUE "Login Password: " RESET);
-scanf("%s", password);
-
+    printf("Username: ");
+    scanf("%s", username);
+    printf("Password: ");
+    scanf("%s", password);
 
     while (fscanf(file, "%d %s %s %d", &u->id, u->username, u->password, &u->role) == 4) {
         if (strcmp(username, u->username) == 0 && strcmp(password, u->password) == 0) {
