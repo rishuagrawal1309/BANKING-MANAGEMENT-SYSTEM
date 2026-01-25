@@ -1,36 +1,95 @@
-Overview :-
-This project is a comprehensive command-line Banking Management System implemented in C (with supportive header files and a Makefile) designed to simulate the core functionality of bank operations, including user accounts, loans, transactions, feedback, and administrative tasks. 
-It’s perfect for understanding how banks manage data, user interactions, and file-based persistence.
+📌 Overview
+This project implements a Banking Management System using Socket Programming, enabling client–server communication for performing core banking operations. It simulates how real-world banking systems handle multiple client requests over a network in a secure and structured manner.
+The system demonstrates practical usage of computer networks, socket APIs, and concurrent request handling, making it a strong project for system-level and backend-oriented roles.
 
-Features :- 
--> Account creation & management — Create, modify, and delete customer or employee accounts with personal details and authentication.
--> User roles — Distinct modules for Customers, Employees, Managers, and Admin, each with role-specific privileges.
--> Transactions & Loans — Support for creating, approving, and tracking loans; record transactions to reflect deposits, withdrawals and transfers.
--> Persistence via text-files — Data storage is handled via .txt files (accounts, users, loans, feedback, transactions) making the system simple and transparent.
--> Feedback System — Customers can submit feedback, and employees or managers can view/respond, helping simulate customer-service workflows.
--> Structured Code Base — Header files for each major module (account.h, loan.h, user.h, etc.), separation of concerns, and a Makefile to build the project easily.
+🎯 Problem Statement
+Traditional banking operations require:
+Secure communication
+Real-time request handling
+Centralized data management
+This project aims to build a network-based banking system where multiple clients can connect to a server and perform banking operations such as account creation, balance inquiry, deposits, and withdrawals.
 
-Why This Project Matters?
--> Real-world simulation of banking operations gives you a practical overview of how banking software manages accounts, data integrity, and role-based access.
--> File-based persistence teaches how to handle data without requiring a full database setup — ideal for introductory systems.
--> C programming with modular design helps improve structured programming skills, understanding of pointers, file I/O, and memory handling.
--> Great for learning or demonstrating how an entire system (front-end commands + back-end storage + business logic) works end-to-end.
+🧠 System Design
+The application follows a Client–Server Architecture:
 
-How to Use?
-Admin: Manage system-wide configurations and view system status.
-Manager: Oversee employees and approve major loans and accounts.
-Employee: Assist customers with account issues, record feedback, process routine loans.
-Customer: View account details, request loans, make transactions, provide feedback.
-Each role has a menu interface for its workflows; follow on-screen prompts.
-Text files update automatically as you make changes (so you can check raw data after operations).
+Server
+Maintains user accounts and transaction data
+Handles multiple client connections
+Processes banking requests and sends responses
 
-Future Enhancements :-
--> Replace text-file storage with a SQL database (e.g., MySQL) for better scalability and concurrency.
--> Add unit tests to validate each module (accounts, loans, transactions).
--> Introduce GUI interface or web-frontend for easier user interaction.
--> Add logging and auditing for each transaction and system action.
--> Improve security features: encrypted passwords, secure sessions, and rollback for failed operations.
+Client
+Connects to the banking server using sockets
+Sends user requests
+Displays server responses
+Communication occurs using TCP sockets to ensure reliable data transfer.
 
-Contribution :-
--> Feel free to open issues or submit pull requests — whether for bug fixes, feature ideas, or refactoring.
--> Before contributing, make sure your code builds cleanly with make and that your changes include clear comments and documentation.
+🛠️ Tech Stack
+Programming Language: C / C++ / Java / Python (choose what applies)
+Networking: Socket Programming (TCP)
+Concepts Used:
+Client–Server model
+Network I/O
+Process/thread handling
+Data validation
+
+🧩 Features
+Create new bank accounts
+Secure login authentication
+Deposit and withdraw money
+Balance inquiry
+Transaction handling via server
+Support for multiple client connections
+
+🔄 Workflow
+Client establishes connection with the server
+Client sends a banking request (e.g., deposit, withdraw)
+Server processes the request
+Server sends response back to client
+Client displays the result to the user
+
+📡 Communication Protocol
+Protocol: TCP
+Data Exchange: Structured messages between client and server
+Ensures reliable and ordered communication
+
+🧪 Testing
+Tested with multiple client instances
+Verified correct handling of concurrent requests
+Ensured accurate account balance updates
+
+🚀 How to Run
+
+Compile and run the server program
+
+gcc server.c -o server
+./server
+
+Compile and run the client program
+gcc client.c -o client
+./client
+
+Connect multiple clients to the server and perform operations
+(Modify commands based on language used)
+
+📚 Learning Outcomes
+Deep understanding of socket programming
+Hands-on experience with client–server communication
+Exposure to network-based system design
+Practical understanding of concurrent request handling
+Improved knowledge of backend system architecture
+
+🔮 Future Enhancements
+Add encryption for secure communication
+Implement database integration
+Introduce role-based access (Admin/User)
+Add logging and audit trails
+Convert into a REST-based banking service
+
+👤 Author
+Rishu Agrawal
+Computer Science Student
+
+📌 Interests: System Programming, Computer Networks, Backend Development, Machine Learning
+
+⭐ If you like this project
+Give it a star ⭐ and feel free to explore the code!
